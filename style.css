@@ -1,0 +1,719 @@
+/* =========================================================
+   BIRTHDAY ACADEMIC WEBSITE
+   Main stylesheet
+   ========================================================= */
+
+:root {
+  --paper: #faf9f6;
+  --ink: #151515;
+  --muted: #5e5e5e;
+  --line: #c9c7c2;
+  --line-light: #dedcd7;
+  --white: #ffffff;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans: "DM Sans", Arial, sans-serif;
+  --max-width: 1375px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+.container {
+  width: min(calc(100% - 80px), var(--max-width));
+  margin-inline: auto;
+}
+
+/* ---------------- HEADER ---------------- */
+
+.site-header {
+  min-height: 89px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #aeadab;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 21px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 3vw, 52px);
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.main-nav a {
+  position: relative;
+  padding-block: 10px;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width 220ms ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 22px;
+}
+
+/* ---------------- HOME HERO ---------------- */
+
+.hero {
+  padding: 56px 0 66px;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.section-number {
+  font-size: 20px;
+  color: #3c3c3c;
+  margin-bottom: 42px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(52px, 6.3vw, 92px);
+  line-height: 1.04;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.short-rule {
+  width: 104px;
+  height: 1px;
+  background: var(--ink);
+  margin: 38px 0 27px 2px;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+/* ---------------- HOME CARDS ---------------- */
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  padding: 39px 0 48px;
+}
+
+.paper-card {
+  min-height: 325px;
+  border: 1px solid var(--line);
+  padding: 30px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    background 240ms ease;
+}
+
+.paper-card:hover {
+  transform: translateY(-4px);
+  border-color: #85837f;
+  background: var(--white);
+}
+
+.card-number {
+  font-family: var(--serif);
+  font-size: 14px;
+}
+
+.card-rule {
+  display: block;
+  width: 100%;
+  max-width: 205px;
+  height: 1px;
+  background: #9d9b97;
+  margin-top: 21px;
+}
+
+.paper-card h2 {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  margin: 25px 0 17px;
+}
+
+.paper-card p {
+  max-width: 430px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #292929;
+}
+
+.card-arrow {
+  margin-top: auto;
+  font-family: var(--sans);
+  font-size: 26px;
+  line-height: 1;
+  transition: transform 220ms ease;
+}
+
+.paper-card:hover .card-arrow {
+  transform: translateX(7px);
+}
+
+.card-bottom-rule {
+  display: block;
+  width: 100%;
+  max-width: 205px;
+  height: 1px;
+  background: #9d9b97;
+  margin-top: 17px;
+}
+
+/* ---------------- INNER PAGES ---------------- */
+
+.page-main {
+  padding-top: 55px;
+  padding-bottom: 20px;
+}
+
+.page-heading {
+  border-bottom: 1px solid var(--line-light);
+  padding-bottom: 35px;
+  margin-bottom: 42px;
+}
+
+.page-heading .section-number {
+  margin-bottom: 24px;
+}
+
+.page-heading h1 {
+  margin: 0;
+  font-size: clamp(46px, 5vw, 72px);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.page-heading p {
+  max-width: 680px;
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.centered-heading {
+  text-align: center;
+}
+
+.centered-heading .section-number,
+.centered-heading p {
+  margin-inline: auto;
+}
+
+/* ---------------- ABSTRACT ---------------- */
+
+.abstract-paper {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.paper-label {
+  padding: 19px 26px;
+  border-bottom: 1px solid var(--line-light);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+}
+
+.birthday-message {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 86px 35px 92px;
+  text-align: center;
+}
+
+.tiny-number {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.birthday-message h2 {
+  margin: 24px 0 28px;
+  font-size: clamp(42px, 6vw, 74px);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.birthday-message p {
+  margin: 0 auto 21px;
+  max-width: 650px;
+  font-size: 19px;
+  line-height: 1.75;
+}
+
+.paper-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 25px;
+  border-top: 1px solid var(--line-light);
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* ---------------- LITERATURE REVIEW ---------------- */
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.achievement-card {
+  border: 1px solid var(--line);
+  background: transparent;
+  transition:
+    background 240ms ease,
+    border-color 240ms ease;
+}
+
+.achievement-card:hover {
+  background: var(--white);
+}
+
+.achievement-card.is-open {
+  background: var(--white);
+  border-color: #8b8985;
+}
+
+.achievement-button {
+  width: 100%;
+  min-height: 300px;
+  padding: 28px 31px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement-title {
+  display: block;
+  margin-top: 26px;
+  font-size: 29px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.reveal-prompt,
+.reveal-status {
+  margin-top: auto;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.reveal-status {
+  display: none;
+}
+
+.reveal-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  transition:
+    grid-template-rows 420ms ease,
+    opacity 300ms ease,
+    margin-top 420ms ease;
+}
+
+.reveal-content::first-line {
+  color: var(--ink);
+}
+
+.reveal-content {
+  padding-right: 10px;
+}
+
+.achievement-card.is-open .achievement-button {
+  min-height: 345px;
+}
+
+.achievement-card.is-open .reveal-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 22px;
+}
+
+.achievement-card.is-open .reveal-prompt {
+  display: none;
+}
+
+.achievement-card.is-open .reveal-status {
+  display: block;
+}
+
+.achievement-card.is-open .achievement-title {
+  margin-bottom: 0;
+}
+
+/* ---------------- FUTURE RESEARCH ---------------- */
+
+.future-page {
+  min-height: calc(100vh - 210px);
+}
+
+.research-experiment {
+  padding: 25px 0 60px;
+}
+
+.research-box {
+  width: min(100%, 760px);
+  min-height: 390px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 250ms ease,
+    border-color 250ms ease;
+}
+
+.research-box:hover {
+  background: var(--white);
+  border-color: #8b8985;
+}
+
+.research-step,
+.research-footer {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.research-footer {
+  margin-top: auto;
+}
+
+.research-message {
+  display: none;
+  text-align: center;
+}
+
+.message-one {
+  display: block;
+  font-size: 25px;
+}
+
+.message-two {
+  font-size: 25px;
+}
+
+.message-three {
+  max-width: 540px;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.message-three strong {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.research-experiment[data-step="2"] .message-one {
+  display: none;
+}
+
+.research-experiment[data-step="2"] .message-two {
+  display: block;
+}
+
+.research-experiment[data-step="3"] .message-one,
+.research-experiment[data-step="3"] .message-two {
+  display: none;
+}
+
+.research-experiment[data-step="3"] .message-three {
+  display: flex;
+}
+
+/* ---------------- AUTHOR'S NOTE ---------------- */
+
+.letter-paper {
+  border: 1px solid var(--line);
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.letter-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 25px;
+  border-bottom: 1px solid var(--line-light);
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.letter-content {
+  padding: 70px clamp(30px, 7vw, 105px) 82px;
+}
+
+.letter-content p {
+  max-width: 720px;
+  margin: 0 auto 25px;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.signature {
+  max-width: 720px;
+  margin: 52px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 16px;
+}
+
+.signature strong {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* ---------------- BACK LINK ---------------- */
+
+.back-home {
+  display: inline-block;
+  margin: 35px 0 55px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease;
+}
+
+.back-home:hover {
+  border-color: var(--ink);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.site-footer {
+  min-height: 70px;
+  border-top: 1px solid #aeadab;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 14px;
+  padding-block: 18px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (min-width: 1000px) {
+  .achievement-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: min(calc(100% - 42px), var(--max-width));
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    top: 89px;
+    left: 21px;
+    right: 21px;
+    padding: 20px 24px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 8vw, 70px);
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .site-header {
+    min-height: 72px;
+  }
+
+  .main-nav {
+    top: 72px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .hero {
+    padding: 38px 0 48px;
+  }
+
+  .hero .section-number {
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 12vw, 58px);
+  }
+
+  .hero-copy {
+    font-size: 17px;
+  }
+
+  .home-grid,
+  .achievement-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .paper-card {
+    min-height: 280px;
+  }
+
+  .page-main {
+    padding-top: 38px;
+  }
+
+  .page-heading h1 {
+    font-size: 43px;
+  }
+
+  .page-heading {
+    margin-bottom: 28px;
+  }
+
+  .achievement-button {
+    min-height: 270px;
+  }
+
+  .achievement-card.is-open .achievement-button {
+    min-height: 315px;
+  }
+
+  .paper-meta,
+  .letter-top,
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .birthday-message {
+    padding: 60px 22px 65px;
+  }
+
+  .birthday-message h2 {
+    font-size: 45px;
+  }
+
+  .birthday-message p,
+  .letter-content p {
+    font-size: 16px;
+  }
+
+  .letter-content {
+    padding: 50px 25px 60px;
+  }
+
+  .research-box {
+    min-height: 330px;
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

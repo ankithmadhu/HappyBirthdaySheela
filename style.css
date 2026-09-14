@@ -534,6 +534,13 @@ button {
   line-height: 1.85;
 }
 
+.letter-image {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 20px auto;
+}
+
 .signature {
   max-width: 720px;
   margin: 52px auto 0;
